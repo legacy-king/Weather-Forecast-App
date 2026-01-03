@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check the weather forecast for any location">
+  <title>Weather Forecast App</title>
+  
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Font Awesome for icons (optional but nice for UI elements) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Main container -->
+  <div class="container">
+    
+    <!-- Header Section -->
+    <header class="header">
+      <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+      <p class="subtitle">Get accurate weather information for any location</p>
+    </header>
+
+    <!-- Search Form Section -->
+    <section class="search-section">
+      <form id="weatherForm" class="search-form">
+        <div class="input-group">
+          <i class="fas fa-search search-icon"></i>
+          <input 
+            type="text" 
+            id="locationInput" 
+            placeholder="Enter city name (e.g., London, New York, Tokyo)"
+            required
+            autocomplete="off"
+          >
+          <button type="submit" class="search-btn">
+            <span>Search</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- Temperature Unit Toggle -->
+      <div class="unit-toggle">
+        <span class="unit-label">Temperature Unit:</span>
+        <button id="unitToggle" class="toggle-btn" data-unit="celsius">
+          <span class="toggle-option active">°C</span>
+          <span class="toggle-option">°F</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-container hidden">
+      <div class="spinner"></div>
+      <p>Fetching weather data...</p>
+    </div>
+
+    <!-- Error Message Display -->
+    <div id="errorMessage" class="error-message hidden">
+      <i class="fas fa-exclamation-triangle"></i>
+      <span id="errorText"></span>
+    </div>
+
+    <!-- Weather Display Section -->
+    <div id="weatherDisplay" class="weather-display hidden">
+      
+      <!-- Current Weather Card -->
+      <div class="current-weather">
+        <div class="location-info">
+          <h2 id="locationName">
+            <i class="fas fa-map-marker-alt"></i>
+            <span></span>
+          </h2>
+          <p id="currentDate"></p>
+        </div>
+
+        <div class="weather-main">
+          <div class="temperature-display">
+            <span id="currentTemp" class="temperature"></span>
+            <span id="tempUnit" class="unit">°C</span>
+          </div>
+          
+          <div class="weather-icon-container">
+            <img id="weatherIcon" src="" alt="Weather icon">
+            <p id="weatherCondition" class="condition"></p>
+          </div>
+        </div>
+
+        <div class="weather-details">
+          <div class="detail-item">
+            <i class="fas fa-thermometer-half"></i>
+            <div class="detail-content">
+              <span class="detail-label">Feels Like</span>
+              <span id="feelsLike" class="detail-value"></span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <i class="fas fa-tint"></i>
+            <div class="detail-content">
+              <span class="detail-label">Humidity</span>
+              <span id="humidity" class="detail-value"></span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <i class="fas fa-wind"></i>
+            <div class="detail-content">
+              <span class="detail-label">Wind Speed</span>
+              <span id="windSpeed" class="detail-value"></span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <i class="fas fa-eye"></i>
+            <div class="detail-content">
+              <span class="detail-label">Visibility</span>
+              <span id="visibility" class="detail-value"></span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <i class="fas fa-compress-arrows-alt"></i>
+            <div class="detail-content">
+              <span class="detail-label">Pressure</span>
+              <span id="pressure" class="detail-value"></span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <i class="fas fa-sun"></i>
+            <div class="detail-content">
+              <span class="detail-label">UV Index</span>
+              <span id="uvIndex" class="detail-value"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Giphy Weather GIF -->
+      <div id="weatherGif" class="weather-gif-container hidden">
+        <h3>Current Mood: <span id="gifCondition"></span></h3>
+        <img id="gifImage" src="" alt="Weather GIF">
+      </div>
+
+      <!-- 7-Day Forecast -->
+      <div class="forecast-section">
+        <h3><i class="fas fa-calendar-week"></i> 7-Day Forecast</h3>
+        <div id="forecastContainer" class="forecast-container">
+          <!-- Forecast cards will be inserted here by JavaScript -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Powered by <a href="https://www.visualcrossing.com/" target="_blank">Visual Crossing Weather API</a></p>
+      <p>Weather GIFs from <a href="https://giphy.com/" target="_blank">Giphy</a></p>
+    </footer>
+
+  </div>
+
+  <!-- Link to JavaScript modules -->
+  <script src="js/weather.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
