@@ -1,0 +1,29 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Optional: If you want to hide your API keys (recommended for private repos)
+# config.js
+
+# Node modules (if you add npm later)
+node_modules/
+
+# Build outputs (if you add webpack later)
+dist/
+build/
