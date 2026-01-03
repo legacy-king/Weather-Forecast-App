@@ -2,6 +2,12 @@
 
 A beautiful, responsive weather application that fetches real-time weather data using the Visual Crossing Weather API and displays weather-related GIFs from Giphy.
 
+## 🌐 Live Demo
+
+**[View Live Demo](https://legacy-king.github.io/Weather-Forecast-App/)**
+
+> Replace `YOUR_USERNAME` with your actual GitHub username
+
 ## ✨ Features
 
 - 🔍 **Location Search** - Search weather for any city worldwide
